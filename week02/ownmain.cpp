@@ -52,7 +52,13 @@ int main()
 	win.attach(t);
 	win.attach(r);
 	
+	/*
+	ostringstream oss;
+	oss << "screen size: " << xmax() << "*" << ymax()
+		<< "window size " << win.xmax() << '*' << win.ymax();
 
+	Text sizes {Point{500,500}, oss.str()};
+	*/
 
 	int xlength = xmax-40;
 	int ylength = ymax-40;
@@ -62,6 +68,14 @@ int main()
 
 	win.attach(x);
 	win.attach(y);
+
+	Closed_polyline poly_rect;
+	poly_rect.add(Point{100,50});
+	poly_rect.add(Point{200,50});
+	poly_rect.add(Point{200,100});
+	poly_rect.add(Point{100,100});
+	poly_rect.add(Point{50,75});
+	win.attach(poly_rect);
 
 	win.wait_for_button();
 
