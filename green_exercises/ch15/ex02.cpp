@@ -31,7 +31,7 @@ int main()
     win.attach(x);
     win.attach(y);
 
-    Fun f{[](double x){ return 1/x; }, -5, 10,
+    Fun f{[](double x){ return x*x; }, -5, 10,
      orig, 100, xscale, yscale, 30};
     win.set_label("1/x");
     win.attach(f);
@@ -41,7 +41,7 @@ int main()
     win.detach(f);
     f.set_func([](double x){ return x; });
     win.set_label("x");
-    f.set_range(-10, 10);
+    f.set_range(-10, 11);
     win.attach(f);
 
     win.wait_for_button();
@@ -49,8 +49,15 @@ int main()
     win.detach(f);
     f.set_func([](double x){ return x/2; });
     f.set_precision(50);
+    f.set_range(-8, 8);
     win.set_label("x/2");
     win.attach(f);
 
+    win.wait_for_button();
+
+    win.detach(f);
+    f.set_func([](double x){ return 1/x; });
+    f.set_range(-15, 7);
+    win.attach(f);
     win.wait_for_button();
 }
