@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <list>
 #include <array>
-#include <stdexcept>
 
 /*
 template<typename T>
@@ -75,7 +74,4 @@ int main()
         std::cout << "Found at: " << std::distance(int_list.begin(), p2) << '\n';
     else
         std::cout << "Not found\n";
-}
-	
-
-	
+}	
